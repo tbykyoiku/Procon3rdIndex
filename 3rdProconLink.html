@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>第3回PGコンテスト作品一覧</title>
+</head>
+<style type="text/css">
+	body {
+		background-color:#fff5ee
+	}
+	.titleText {
+		font-size:20px;
+	}
+	.item {
+		margin:10px;
+		font-size:15px
+	}
+	.item:hover {
+		background-color:skyblue;
+	}
+</style>
+<script>
+	var dataList = [
+		{
+			name:'藤田',
+			url:'https://tbykyoiku.github.io/prcon202003_fujita/'
+			,description:''
+			,isPerson:true
+		},
+		{
+			name:'森',
+			url:'https://tbykyoiku.github.io/prcon202003_mori/'
+			,description:''
+			,isPerson:true
+		},
+		{
+			name:'国吉',
+			url:'https://tbykyoiku.github.io/prcon202003_kuniyoshi/'
+			,description:''
+			,isPerson:true
+		},
+		{
+			name:'長島',
+			url:'https://tbykyoiku.github.io/prcon202003_nagashima/'
+			,description:''
+			,isPerson:true
+		},
+		{
+			name:'土井田',
+			url:'https://tbykyoiku.github.io/prcon202003_doida/'
+			,description:''
+			,isPerson:true
+		},
+		{
+			name:'美濃',
+			url:'https://tbykyoiku.github.io/prcon202003_mino/'
+			,description:''
+			,isPerson:true
+		},
+		{
+			name:'内山',
+			url:'https://tbykyoiku.github.io/prcon202003_uchiyama/'
+			,description:'※FLASH使用のため環境によっては動作不可'
+			,isPerson:true
+		},
+		{
+			name:'参考：展開したサンプルプログラム',
+			url:'https://tbykyoiku.github.io/Procon_3rd_SamplePJ/'
+			,description:''
+			,isPerson:false
+		},
+		
+	];
+	window.onload = function(){
+		var itemArea = document.getElementById('itemArea');
+		for(var i=0;i< dataList.length;i++) {
+			var item = document.createElement('div');
+			item.className  = 'item';
+			
+			var linkItem = document.createElement('a');
+			linkItem.setAttribute('href',dataList[i].url);
+			linkItem.setAttribute('target','_blank');
+			linkItem.textContent = dataList[i].name;
+			if(dataList[i].isPerson) {
+				linkItem.textContent = linkItem.textContent+'さん';
+			}
+			item.appendChild(linkItem);
+			if(dataList[i].description) {
+				var descItem = document.createElement('div');
+				descItem.textContent =  dataList[i].description;
+				item.appendChild(descItem);
+			}
+			itemArea.appendChild(item);
+			
+		}
+		
+	} 
+	
+</script>
+
+
+<body>
+	<div>
+		<p class="titleText">第3回PGコンテスト 提出作品一覧</p>
+	</div>
+	<div id="itemArea">
+	</div>
+</body>
+
+</html>
